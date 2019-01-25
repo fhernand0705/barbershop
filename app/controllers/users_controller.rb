@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:create, :edit, :show, :update]
+  before_action :set_user, only: [:edit, :show, :update]
 
   def new
     @user = User.new
@@ -10,10 +10,10 @@ class UsersController < ApplicationController
     if @user.valid?
       @user.save
       log_in @user
-      flash[:success] = "Welcome to Barbershop+!"
+      flash.now[:success] = "Welcome to Barbershop+!"
       redirect_to @user
     else
-      render 'users/new'
+      redirect_to new_user_path
     end
   end
 
