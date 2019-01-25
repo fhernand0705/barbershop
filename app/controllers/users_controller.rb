@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action: set_user only [:create, :edit, :show]
+  before_action :set_user, only: [:create, :edit, :show, :update]
 
   def new
     @user = User.new
@@ -13,21 +13,31 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome to Barbershop+!"
       redirect_to @user
     else
-      render 'new'
+      render 'users/new'
     end
+  end
+
+  def show
   end
 
   def edit
   end
 
   def update
+    @user.update(user_params)
+    redirect_to users_path(@user)
   end
 
-  def show
-  end
 
   def index
     @user = User.all
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
@@ -39,8 +49,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:first_name,
                                  :last_name,
                                  :email,
-                                 :password,
-                                 :avatar)
+                                 :password)
   end
-
 end

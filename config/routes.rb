@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :users
   resources :shops
 
+  post '/signup', to: 'users#create'
+  patch '/users/:id', to: 'users#update'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
