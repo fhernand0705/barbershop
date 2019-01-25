@@ -1,3 +1,23 @@
 Rails.application.routes.draw do
+  get 'schedules/new'
+  get 'schedules/edit'
+  get 'schedules/show'
+  get 'schedules/index'
+  get 'services/new'
+  get 'services/edit'
+  get 'services/index'
+  get 'services/show'
+  get 'appointments/new'
+  get 'appointments/edit'
+  get 'appointments/show'
+  get 'appointments/index'
+  get 'shops/new'
+  get 'shops/edit'
+  get 'shops/show'
+  get 'shops/index'
+  get 'users/new'
+  get 'users/edit'
+  get 'users/show'
+  get 'users/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
