@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  resources :users
+  resources :shops
+
+  # add root path (homepage)
+
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+
   get 'schedules/new'
   get 'schedules/edit'
   get 'schedules/show'
@@ -11,13 +20,6 @@ Rails.application.routes.draw do
   get 'appointments/edit'
   get 'appointments/show'
   get 'appointments/index'
-  get 'shops/new'
-  get 'shops/edit'
-  get 'shops/show'
-  get 'shops/index'
-  get 'users/new'
-  get 'users/edit'
-  get 'users/show'
-  get 'users/index'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
