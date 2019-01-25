@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  note: 
+  user_id: 1
+  shop_id: 1
+  service_id: 1
+  schedule_id: 1
+
+two:
+  note: 
+  user_id: 1
+  shop_id: 1
+  service_id: 1
+  schedule_id: 1
