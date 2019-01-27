@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  rolify
+
   before_save {self.email = email.downcase}
 
   validates :first_name, presence: true
