@@ -12,6 +12,7 @@
     <%= f.email_field :email %><br>
     <%= f.label :password %><br>
     <%= f.password_field :password %><br>
+    <%= f.collection_select :role_ids, Role.all, :id, :name %><br></br> 
 
     <%= f.submit 'Create', class: "btn btn-primary" %>
   <% end %>
