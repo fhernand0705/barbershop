@@ -50,6 +50,6 @@ class UsersController < ApplicationController
                                  :last_name,
                                  :email,
                                  :password,
-                                  role_ids:[])
+                                  {role_ids: []})
   end
 end

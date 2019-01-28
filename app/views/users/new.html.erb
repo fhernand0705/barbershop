@@ -12,7 +12,12 @@
     <%= f.email_field :email %><br>
     <%= f.label :password %><br>
     <%= f.password_field :password %><br>
-    <%= f.collection_select :role_ids, Role.all, :id, :name %><br></br> 
+      <% for role in Role.all %>
+        <div>
+            <%= radio_button_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
+            <%= role.name %>
+        </div>
+      <% end %>
 
     <%= f.submit 'Create', class: "btn btn-primary" %>
   <% end %>
