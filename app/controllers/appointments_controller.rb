@@ -2,7 +2,12 @@ class AppointmentsController < ApplicationController
   before_action :set_appt, only: [:show, :edit, :update]
 
   def new
-    @appt = Appointment.new
+    if logged_in?
+      @appt = Appointment.new
+    else
+      flash[:notice] = "Only logged in users have access to book appointments"
+      redirect_to root_path
+    end
   end
 
   def create
