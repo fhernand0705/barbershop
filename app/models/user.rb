@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :appointments
   has_many :shops, through: :appointments
   has_many :schedules
+  has_and_belongs_to_many :roles
 
   def full_name
     self.first_name + ' ' + self.last_name
