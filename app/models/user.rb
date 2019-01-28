@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  rolify
+  # rolify
 
   before_save {self.email = email.downcase}
 
