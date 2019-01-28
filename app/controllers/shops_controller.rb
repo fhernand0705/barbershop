@@ -9,9 +9,11 @@ class ShopsController < ApplicationController
     @shop = Shop.new(shop_params)
     if @shop.valid?
       @shop.save
-      redirect_to shops_path, :flash => { :success => "#{@shop.name} created!" }
+      flash[:notice] = "#{@shop.name} created!"
+      redirect_to shops_path
     else
-      render 'shops/new'   
+      render 'shops/new'
+    end
   end
 
   def show
@@ -42,7 +44,7 @@ class ShopsController < ApplicationController
   end
 
   def shop_params
-    params.require(:shop).premit(:name,
+    params.require(:shop).permit(:name,
                                  :address,
                                  :phone)
   end
