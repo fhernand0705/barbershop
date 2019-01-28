@@ -1,6 +1,7 @@
 <% if current_user %>
   <%= link_to "Profile", user_path(@current_user) %>
   <%= link_to "Book Appointment", new_appointment_path %>
+  <%= link_to "Services", services_path %>
   <%= link_to "Logout", logout_path, method: :delete %>
 <% else %>
   <%= link_to "Sign Up", new_user_path %>

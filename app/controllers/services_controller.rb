@@ -12,7 +12,7 @@ class ServicesController < ApplicationController
        flash[:success] = "#{@service.name} added to list of services!"
        redirect_to service_path(@service)
     else
-      render 'services/new'
+       render 'services/new'
     end
   end
 

@@ -1,2 +1,5 @@
-<h1>Services#index</h1>
-<p>Find me in app/views/services/index.html.erb</p>
+<h1>List of Services</h1>
+
+<% if current_user.has_any_role?(:admin, :barber) %>
+  <%= link_to "Add Service", new_service_path %>
+<% end %>

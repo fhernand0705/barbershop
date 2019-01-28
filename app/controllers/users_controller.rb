@@ -8,10 +8,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.valid?
-      @user.save
-      log_in @user
-      flash.now[:success] = "Welcome to Barbershop+!"
-      redirect_to @user
+       @user.save
+       log_in @user
+       flash[:success] = "Welcome to Barbershop+!"
+       redirect_to @user
     else
       redirect_to new_user_path
     end
@@ -50,6 +50,6 @@ class UsersController < ApplicationController
                                  :last_name,
                                  :email,
                                  :password,
-                                  {role_ids: []})
+                                 {role_ids: []})
   end
 end
