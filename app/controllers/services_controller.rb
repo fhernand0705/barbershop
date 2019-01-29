@@ -23,7 +23,7 @@ class ServicesController < ApplicationController
   end
 
   def index
-    @service = Service.all
+    @services = Service.all
   end
 
   def destroy
