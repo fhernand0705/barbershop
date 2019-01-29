@@ -4,9 +4,9 @@
     <title>Barbershop+</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/navbar' %>
   </head>
 
   <body>
@@ -15,7 +15,6 @@
         <%= content_tag(:div, msg, class: "alert alert-info") %>
       <% end %>
     </div>
-    <%= render 'layouts/navbar' %>
     <%= yield %>
   </body>
 </html>

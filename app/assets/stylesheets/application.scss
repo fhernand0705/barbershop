@@ -14,3 +14,28 @@
  // *= require jquery.timepicker.css
 
  @import "bootstrap";
+
+// nav bar
+.nav {
+  background-color: red;
+  height: 5em;
+}
+
+.nav > li {
+  position: relative;
+  display: inline-block;
+  float: right;
+    a {
+      border-radius: 5px;
+      top: .5em;
+      font-size: large;
+      color: black
+  }
+}
+
+// appointments section
+.wrapper {
+  position: relative;
+  top: 3em;
+  margin: 1% 2%;
+}
