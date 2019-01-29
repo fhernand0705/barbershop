@@ -28,7 +28,7 @@ class ShopsController < ApplicationController
   end
 
   def index
-    @shop = Shop.all
+    @shops = Shop.all
   end
 
   def destroy
