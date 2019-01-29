@@ -15,7 +15,7 @@ class AppointmentsController < ApplicationController
     if @appt.valid?
        @appt.save!
        flash[:success] = "Your appointment has been created!"
-       redirect_to appointment_path(@appt)
+       redirect_to appointments_path
     else
        redirect_to new_appointment_path
     end
@@ -33,7 +33,8 @@ class AppointmentsController < ApplicationController
   end
 
   def index
-    @appt = Appointment.all
+    @appt = Appointment.new
+    @appts = Appointment.all
   end
 
   def destroy
@@ -53,7 +54,7 @@ class AppointmentsController < ApplicationController
                                         :user_id,
                                         :shop_id,
                                         :service_id,
-                                        :schedule_id,
+                                        :start_date,
                                         :start_at)
   end
 end

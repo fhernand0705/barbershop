@@ -4,7 +4,7 @@
     <li class="nav-item"><%= link_to "Profile", user_path(@current_user), class:"nav-link active" %></li>
   <% if !current_page?(root_path) && !current_page?(shops_path) %>
     <li class="nav-item"><%= link_to "Services", services_path, class:"nav-link" %></li>
-    <li class="nav-item"><%= link_to "Book Appointment", new_appointment_path, class:"nav-link" %></li>
+    <li class="nav-item"><%= link_to "Book Appointment", appointments_path, class:"nav-link" %></li>
   <% end %>
   <% else %>
     <li class="nav-item"><%= link_to "Sign Up", new_user_path, class:"nav-link" %></li>

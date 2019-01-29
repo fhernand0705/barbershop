@@ -8,5 +8,9 @@ class Appointment < ApplicationRecord
   validates :user_id, presence: true
   validates :shop_id, presence: true
 
+  def start_time
+    self.start_date
+  end
+
   # resourcify
 end
