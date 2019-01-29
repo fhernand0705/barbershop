@@ -18,3 +18,16 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// opens appointment sidebar
+function openSidebar() {
+  var sidebar = document.getElementById('appt-sidebar');
+  sidebar.style.width = "250px";
+  sidebar.style.margin = "0";
+}
+
+// closes appointment sidebar
+function closeSidebar() {
+  var sidebar = document.getElementById('appt-sidebar');
+  sidebar.style.width = "0";
+}

@@ -35,8 +35,38 @@
 }
 
 // appointments section
-.wrapper {
-  position: relative;
-  top: 3em;
+.sidebar {
+  position: fixed;
+  height: 100%;
+  width: 0;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 50px;
+  transition: .5s;
   margin: 1% 2%;
+}
+
+.sidebar .closebar {
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: #818181;
+}
+
+.row {
+  position: relative;
+  top: 1em;
+  color: #818181;
+}
+
+h1 {
+  color: #818181;
+  text-align: center;
+
 }
