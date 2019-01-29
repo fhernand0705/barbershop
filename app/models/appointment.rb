@@ -1,8 +1,12 @@
 class Appointment < ApplicationRecord
-  belongs_to :user, optional: true
-  belongs_to :shop, optional: true
+  belongs_to :user, optional: true, dependent: :destroy
+  belongs_to :shop, optional: true, dependent: :destroy
   belongs_to :service, optional: true
   belongs_to :schedule, optional: true
 
-  # resourcify 
+  validates :start_at, presence: true
+  validates :user_id, presence: true
+  validates :shop_id, presence: true
+
+  # resourcify
 end

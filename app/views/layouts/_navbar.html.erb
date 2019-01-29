@@ -1,23 +1,15 @@
-<% if current_user %>
-  <ul class="nav">
-    <li class="nav-item">
-      <%= link_to "Logout", logout_path, method: :delete, class:"nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Profile", user_path(@current_user), class:"nav-link active" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Services", services_path, class:"nav-link" %>
-    </li>
-    <li class="nav-item">
-    <%= link_to "Book Appointment", new_appointment_path, class:"nav-link" %>
-    </li>
+<ul class="nav">
+  <% if current_user %>
+    <li class="nav-item"><%= link_to "Logout", logout_path, method: :delete, class:"nav-link" %></li>
+    <li class="nav-item"><%= link_to "Profile", user_path(@current_user), class:"nav-link active" %></li>
+  <% if !current_page?(root_path) && !current_page?(shops_path) %>
+    <li class="nav-item"><%= link_to "Services", services_path, class:"nav-link" %></li>
+    <li class="nav-item"><%= link_to "Book Appointment", new_appointment_path, class:"nav-link" %></li>
+  <% end %>
   <% else %>
-    <li class="nav-item">
-      <%= link_to "Sign Up", new_user_path, class:"nav-link" %>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Login", login_path, class:"nav-link" %>
-    </li>
-  </ul>
-<% end %>
+    <li class="nav-item"><%= link_to "Sign Up", new_user_path, class:"nav-link" %></li>
+    <li class="nav-item"><%= link_to "Login", login_path, class:"nav-link" %></li>
+  <% end %>
+    <li class="nav-item"><%= link_to "Barbershops", shops_path, class:"nav-link" %></li>
+    <li class="nav-item"><%= link_to "Home", root_path, class:"nav-link" %></li>
+</ul>

@@ -8,11 +8,11 @@ class ShopsController < ApplicationController
   def create
     @shop = Shop.new(shop_params)
     if @shop.valid?
-      @shop.save
-      flash[:notice] = "#{@shop.name} created!"
-      redirect_to shops_path
+       @shop.save
+       flash[:notice] = "#{@shop.name} created!"
+       redirect_to shops_path
     else
-      render 'shops/new'
+       render 'shops/new'
     end
   end
 
