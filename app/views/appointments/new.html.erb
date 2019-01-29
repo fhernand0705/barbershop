@@ -1,4 +1,9 @@
 <h1>Book appointment</h1>
+
+<%= month_calendar do |date| %>
+  <%= date %>
+<% end %>
+
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@appt) do |f| %>
