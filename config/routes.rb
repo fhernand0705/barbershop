@@ -5,15 +5,11 @@ Rails.application.routes.draw do
   resources :shops
   resources :services
   resources :appointments
+  resources :charges, only: [:new, :create]
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-
-  # get 'schedules/new'
-  # get 'schedules/edit'
-  # get 'schedules/show'
-  # get 'schedules/index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

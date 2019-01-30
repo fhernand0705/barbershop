@@ -14,8 +14,8 @@ class AppointmentsController < ApplicationController
     @appt = Appointment.new(appt_params)
     if @appt.valid?
        @appt.save!
-       flash[:success] = "Your appointment has been created!"
-       redirect_to appointments_path
+       # flash[:success] = "Your appointment has been created!"
+       redirect_to current_user
     else
        redirect_to new_appointment_path
     end
