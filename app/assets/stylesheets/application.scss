@@ -70,6 +70,11 @@ h1 {
   text-align: center;
 }
 
+// Barbershop profile (*calendar)
+.simple-calendar {
+  float: left;
+}
+
 // Barbershop profile (*services table)
 .services {
   position: relative;
@@ -101,8 +106,8 @@ h1 {
 // Barbershop profile (*barbers table)
 .barbers {
   position: relative;
-  top: 13em;
-  left: 25%;
+  // top: 13em;
+  // left: 25%;
   float: right;
   width: 25%;
   box-shadow: 0 0 5px 0 rgba(43,43,43,0.1),

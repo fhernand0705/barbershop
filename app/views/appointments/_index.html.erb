@@ -1,14 +1,10 @@
-<h1>Appointments#index</h1>
-
-<%= render 'new' %>
-
 <%= month_calendar events: @appts do |date, appts| %>
   <%= date.day %>
 
   <% appts.each do |a| %>
   <div>
     <span>@<%= a.start_at.strftime("%H:%M") %></span>
-    <span>| Barber: <%= a.user.first_name.capitalize %></span>
+    <span>| Barber: <%#= a.user.first_name.capitalize %></span>
   </div>
  <% end %>
 <% end %>

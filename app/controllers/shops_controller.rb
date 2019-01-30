@@ -18,6 +18,8 @@ class ShopsController < ApplicationController
 
   def show
     @services = Service.all
+    @appt = Appointment.new
+    @appts = Appointment.all
   end
 
   def edit

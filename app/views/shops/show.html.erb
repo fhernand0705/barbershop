@@ -1,4 +1,7 @@
-<%= render 'services/index' %>
+<button class="openbar" onclick="openSidebar()">Book Appointment</button>
+
+<%= render 'appointments/index' %>
+<%= render 'appointments/new' %>
 
 <div class="table-responsive-sm">
   <table class="table barbers">
@@ -18,12 +21,14 @@
       </tr>
     </thead>
     <tbody>
-
+      <!-- LOOP THRU SHOP TO LIST BARBER NAMES -->
       <tr>
-        <td><%= @shop.name %></td>
-        <td><%#= @shop.users.first_name %></td>
+        <td><%= @shop.users[0].first_name.capitalize %></td>
+        <td><%= @shop.users[0].last_name.capitalize %></td>
       </tr>
 
     </tbody>
   </table>
 </div>
+
+<%= render 'services/index' %>
