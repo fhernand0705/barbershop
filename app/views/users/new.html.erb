@@ -17,7 +17,7 @@
           <%= role.name.capitalize %>
         </div>
       <% end %>
-
+    <%= f.collection_select :shop_id, Shop.all, :id, :name, {include_blank: true } %><br>
     <%= f.submit 'Create', class: "btn btn-primary" %>
     <% end %>
   </div>

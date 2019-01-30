@@ -28,7 +28,6 @@ class UsersController < ApplicationController
     redirect_to users_path(@user)
   end
 
-
   def index
     @user = User.all
   end
@@ -50,6 +49,7 @@ class UsersController < ApplicationController
                                  :last_name,
                                  :email,
                                  :password,
+                                 :shop_id,
                                  {role_ids: []})
   end
 end

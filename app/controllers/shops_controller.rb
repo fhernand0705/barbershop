@@ -17,6 +17,7 @@ class ShopsController < ApplicationController
   end
 
   def show
+    @services = Service.all
   end
 
   def edit

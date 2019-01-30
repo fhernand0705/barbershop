@@ -11,8 +11,8 @@ class User < ApplicationRecord
   validates :password, presence: true, length: {minimum: 4}
 
   has_many :appointments
-  has_many :shops, through: :appointments
   has_many :schedules
+  belongs_to :shop, optional: true 
 
   def full_name
     self.first_name + ' ' + self.last_name

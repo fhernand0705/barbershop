@@ -70,7 +70,7 @@ h1 {
   text-align: center;
 }
 
-// Barbershops profile (*services table)
+// Barbershop profile (*services table)
 .services {
   position: relative;
   float: right;
@@ -88,6 +88,36 @@ h1 {
 }
 
 .add-service {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: 700;
+    a {
+      position: relative;
+      left: 85%;
+  }
+}
+
+// Barbershop profile (*barbers table)
+.barbers {
+  position: relative;
+  top: 13em;
+  left: 25%;
+  float: right;
+  width: 25%;
+  box-shadow: 0 0 5px 0 rgba(43,43,43,0.1),
+  0 13px 6px -7px rgba(43,43,43,0.1);
+}
+
+.barber-header {
+  position: relative;
+  top: 2em;
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.add-barber {
   position: relative;
   text-transform: uppercase;
   font-size: 2em;
