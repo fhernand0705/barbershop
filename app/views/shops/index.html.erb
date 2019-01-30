@@ -15,12 +15,16 @@
       <td><%= s.name.capitalize %></td>
       <td><%= s.address %></td>
       <td><%= s.phone %></td>
+      <% if logged_in? %>
       <td>
         <%= link_to shop_path(s.id) do %>
           <i class="fas fa-home"></i>
         <% end %>
       </td>
-    </tr>
+      <% else %>
+        <td>Log in for access to barbershop profile</td>
+      <% end %>
     <% end %>
+    </tr>
   </tbody>
 </table>
