@@ -16,10 +16,19 @@
 
  @import "bootstrap";
 
+#home {
+  background-image: url('https://images.unsplash.com/photo-1496181832051-69dcf27fc27d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 // nav bar
 .nav {
-  background-color: red;
+  background-color: #06127C;
   height: 5em;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 .nav > li {
@@ -30,7 +39,10 @@
       border-radius: 5px;
       top: .5em;
       font-size: large;
-      color: black
+      color: #818181;
+      &:hover {
+        color: #06127C;
+    }
   }
 }
 
@@ -42,7 +54,7 @@
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: #06127C;
   overflow-x: hidden;
   padding-top: 50px;
   transition: .5s;
@@ -59,20 +71,46 @@
   color: #818181;
 }
 
+.openbar {
+  position: relative;
+  top: 6em;
+  left: 5em;
+  border-radius: 5px;
+  color: #818181;
+    &:hover {
+      background-color: #06127C;
+      color: #818181;
+  }
+}
+
 .row {
   position: relative;
   top: 1em;
   color: #818181;
 }
 
-h1 {
+.sidebar .btn {
+  background-color: #818181;
+  color: whitesmoke;
+}
+
+.sidebar h1 {
   color: #818181;
   text-align: center;
 }
 
 // Barbershop profile (*calendar)
 .simple-calendar {
+  position: relative;
   float: left;
+  width: 60%;
+  left: 5em;
+  top: 6em;
+  box-shadow: 0 0 7px 0 rgba(43,43,43,0.1),
+  0 15px 6px -7px rgba(43,43,43,0.1);
+    .calendar-heading {
+        text-align: center;
+  }
 }
 
 // Barbershop profile (*services table)
@@ -80,7 +118,7 @@ h1 {
   position: relative;
   float: right;
   width: 25%;
-  box-shadow: 0 0 5px 0 rgba(43,43,43,0.1),
+  box-shadow: 0 0 10px 0 rgba(43,43,43,0.1),
   0 13px 6px -7px rgba(43,43,43,0.1);
 }
 
@@ -100,14 +138,13 @@ h1 {
     a {
       position: relative;
       left: 85%;
+      color: #06127C;
   }
 }
 
 // Barbershop profile (*barbers table)
 .barbers {
   position: relative;
-  // top: 13em;
-  // left: 25%;
   float: right;
   width: 25%;
   box-shadow: 0 0 5px 0 rgba(43,43,43,0.1),
@@ -130,5 +167,6 @@ h1 {
     a {
       position: relative;
       left: 85%;
+      color: #06127C;
   }
 }
