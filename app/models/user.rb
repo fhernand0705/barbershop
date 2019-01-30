@@ -10,9 +10,9 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: {minimum: 4}
 
-  has_many :appointments
+  has_many :appointments, dependent: :destroy
   has_many :schedules
-  belongs_to :shop, optional: true 
+  belongs_to :shop, optional: true
 
   def full_name
     self.first_name + ' ' + self.last_name

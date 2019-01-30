@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @appts = Appointment.all
   end
 
   def edit

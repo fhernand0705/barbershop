@@ -8,11 +8,13 @@
   <section>
     <%= month_calendar events: @appts do |date, appts| %>
       <%= date.day %>
+      <% if @appts.present? %>
       <% appts.each do |a| %>
        <div>
          <span>@<%= a.start_at.strftime("%H:%M") %></span>
-         <span>| Barber: <%#= a.user.first_name.capitalize %></span>
+         <span>| Barber: <%= a.user.first_name.capitalize %></span>
        </div>
+      <% end %>
      <% end %>
     <% end %>
   </section>
@@ -34,11 +36,12 @@
         </tr>
       </thead>
       <tbody>
-        <!-- LOOP THRU SHOP TO LIST BARBER NAMES -->
+        <% @shop.users.each do |u| %>
         <tr>
-          <td><%= @shop.users[0].first_name.capitalize %></td>
-          <td><%= @shop.users[0].last_name.capitalize %></td>
+          <td><%= u.first_name.capitalize %></td>
+          <td><%= u.last_name.capitalize %></td>
         </tr>
+        <% end %>
       </tbody>
     </table>
   </div>

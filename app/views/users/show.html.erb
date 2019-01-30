@@ -1,2 +1,43 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<% if current_user.has_any_role?(:client) %>
+<section>
+  <%= month_calendar events: @appts do |date, appts| %>
+    <%= date.day %>
+    <% if @appts.present? %>
+    <% appts.each do |a| %>
+     <div>
+       <span>@<%= a.start_at.strftime("%H:%M") %></span>
+       <span>| Barber: <%= a.user.first_name.capitalize %></span>
+     </div>
+    <% end %>
+   <% end %>
+  <% end %>
+</section>
+
+<% elsif current_user.has_any_role?(:barber) %>
+<% if @user.appointments.present? %>
+<section>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Barbershop</th>
+        <th scope="col">Location</th>
+        <th scope="col">Client</th>
+        <th scope="col">Time of Appointment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user.appointments.each do |u| %>
+      <tr>
+        <td><%= u.shop.name.capitalize %></td>
+        <td><%= u.shop.address %></td>
+        <td><%= u.user.first_name.capitalize %></td>
+        <td><%= u.start_at.strftime("%H:%M") %></td>
+      <% end %>
+      </tr>
+    </tbody>
+  </table>
+  <% else %>
+  <h1 class="profile-header">No Appointments Scheduled</h1>
+  <% end %>
+</section>  
+<% end %>

@@ -7,7 +7,7 @@
         <%= f.label :Date %><br>
         <%= f.date_field :start_date %><br>
         <%= f.label :Time %><br>
-        <%= f.text_field :start_at, :class => "time_picker" %><br>
+        <%= f.text_field :start_at, :class => "time_picker" %><br>  
         <%= f.label :Barbershop %><br>
         <%= f.collection_select :shop_id, Shop.all, :id, :name, {include_blank: true} %><br>
         <%= f.label :Barber %><br>
