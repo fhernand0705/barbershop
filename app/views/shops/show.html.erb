@@ -1,6 +1,9 @@
 <div class="main-container">
- <button class="openbar" onclick="openSidebar()">Book Appointment</button>
- <%= render 'appointments/new' %>
+
+  <section>
+    <button class="openbar" onclick="openSidebar()">Book Appointment</button>
+    <%= render 'appointments/new' %>
+  </section>
 
   <section>
     <%= month_calendar events: @appts do |date, appts| %>
