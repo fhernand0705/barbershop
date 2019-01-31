@@ -160,6 +160,7 @@ hr {
 .services {
   position: relative;
   float: right;
+  top: 5em;
   width: 25%;
   box-shadow: 0 0 10px 0 rgba(43,43,43,0.1),
   0 13px 6px -7px rgba(43,43,43,0.1);
@@ -189,6 +190,7 @@ hr {
 .barbers {
   position: relative;
   float: right;
+  top: 8em;
   width: 25%;
   box-shadow: 0 0 5px 0 rgba(43,43,43,0.1),
   0 13px 6px -7px rgba(43,43,43,0.1);
@@ -214,6 +216,20 @@ hr {
   }
 }
 
+.delete-shop {
+  position: relative;
+  font-size: large;
+  top: 5em;
+  left: 72%;
+}
+
+.edit-shop {
+  position: relative;
+  font-size: large;
+  top: 5em;
+  left: 70%;
+}
+
 // Client/Barber profile
 .profile-header {
   position: relative;
@@ -224,4 +240,18 @@ hr {
 .table-striped {
   position: relative;
   top: 6em;
+}
+
+.edit-user {
+  position: relative;
+  font-size: large;
+  top: 5em;
+  left: 75%;
+}
+
+.delete-user {
+  position: relative;
+  font-size: large;
+  top: 5em;
+  left: 76%;
 }

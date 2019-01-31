@@ -38,6 +38,8 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.js
     end
+    # @user.destroy
+    redirect_to root_path
   end
 
   private
