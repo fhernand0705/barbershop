@@ -23,6 +23,7 @@
   <% elsif current_user.has_any_role?(:barber) %>
   <% if @user.appointments.present? %>
   <table class="table table-striped">
+    <caption class="appointment-header">Appointment Schedule</caption>
     <thead>
       <tr>
         <th scope="col">Barbershop</th>
@@ -49,8 +50,8 @@
 
 <!-- barber schedule -->
 <section>
-    <h2>Work Schedule</h2>
     <table class="table table-striped-barber">
+      <caption class="schedule-header">Work Schedule</caption>
       <thead>
         <tr>
           <th scope="col">Status</th>

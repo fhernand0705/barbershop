@@ -235,8 +235,19 @@
    position: relative;
    color: #818181;
    top: 2em;
-   text-align: center;
+   text-align: left;
  }
+
+.appointment-header {
+  font-size: 2em;
+  color: #818181;
+}
+
+.schedule-header {
+  font-size: 2em;
+  color: #818181;
+}
+
  .table-striped {
    position: relative;
    top: 6em;
@@ -246,6 +257,7 @@
    position: relative;
    width: 30%;
    float: right;
+   top: 3em;
  }
 
  .edit-user {
