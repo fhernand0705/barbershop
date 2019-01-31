@@ -3,6 +3,8 @@
   <section>
     <button class="openbar" onclick="openSidebar()">Book Appointment</button>
     <%= render 'appointments/new' %>
+    <%= link_to "Edit Shop", edit_shop_path, class:"edit-shop" %>
+    <%= link_to "Delete Shop", @shop, method: :delete, remote: true, class:"delete-shop", data: {confirm: "are you sure?"} %>
   </section>
 
   <section>

@@ -39,6 +39,8 @@ class ShopsController < ApplicationController
     respond_to do |format|
       format.js
     end
+    # @shop.destroy
+    redirect_to root_path 
   end
 
   private

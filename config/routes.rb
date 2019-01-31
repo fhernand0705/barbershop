@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'clients/new'
-  get 'clients/edit'
-  get 'clients/show'
   root 'pages#home'
 
   resources :users
