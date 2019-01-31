@@ -1,6 +1,5 @@
 class ChargesController < ApplicationController
   def new
-    @total = 1500
   end
 
   def create
@@ -18,9 +17,6 @@ class ChargesController < ApplicationController
     :description => 'Rails Stripe customer',
     :currency    => 'usd'
   )
-
-  @user = User.find(session[:user_id])
-  redirect_to current_user
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
