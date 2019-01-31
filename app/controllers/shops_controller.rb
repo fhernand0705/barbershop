@@ -1,5 +1,6 @@
 class ShopsController < ApplicationController
   before_action :set_shop, only: [:edit, :show, :update]
+  before_action :set_shops, only: [:show]
 
   def new
     @shop = Shop.new
@@ -40,12 +41,16 @@ class ShopsController < ApplicationController
       format.js
     end
     # @shop.destroy
-    redirect_to root_path 
+    redirect_to root_path
   end
 
   private
   def set_shop
     @shop = Shop.find(params[:id])
+  end
+
+  def set_shops
+    @shops = Shop.all
   end
 
   def shop_params

@@ -24,7 +24,7 @@
   <div class="table-responsive-sm">
     <table class="table barbers">
       <caption class="barber-header">Barbers</caption>
-      <% if current_user.has_any_role?(:admin, :barber) %>
+      <% if current_user.has_any_role?(:barber) %>
       <caption class="add-barber">
         <%= link_to new_user_path do %>
           <i class="fas fa-plus-circle"></i>
@@ -35,6 +35,7 @@
         <tr>
           <th scope="col">First Name</th>
           <th scope="col">Last Name</th>
+          <th scope="col">Profile</th>
         </tr>
       </thead>
       <tbody>
@@ -42,6 +43,7 @@
         <tr>
           <td><%= u.first_name.capitalize %></td>
           <td><%= u.last_name.capitalize %></td>
+          <td><%= link_to "Profile", user_path(u.id) %></td>
         </tr>
         <% end %>
       </tbody>
