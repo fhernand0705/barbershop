@@ -2,5 +2,7 @@ class Schedule < ApplicationRecord
   belongs_to :user
   has_many :appointments
 
-  # resourcify 
+  validates :start_at, presence: true
+  validates :end_at, presence: true
+
 end

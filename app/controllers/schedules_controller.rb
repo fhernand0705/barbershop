@@ -1,5 +1,5 @@
-class ScheduleController < ApplicationController
-  before_action :set_schedule, :only, [:show, :edit]
+class SchedulesController < ApplicationController
+  before_action :set_schedule, only: [:show, :edit]
 
   def new
     @schedule = Schedule.new
@@ -12,6 +12,7 @@ class ScheduleController < ApplicationController
        redirect_to current_user
     else
       render 'new'
+    end
   end
 
   def show
@@ -25,7 +26,6 @@ class ScheduleController < ApplicationController
   end
 
   private
-
   def set_schedule
     @schedule = Schedule.find(params[:id])
   end

@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   resources :users
-  resources :clients
   resources :shops
   resources :services
   resources :appointments
