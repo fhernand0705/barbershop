@@ -10,7 +10,7 @@ class ServicesController < ApplicationController
     if @service.valid?
        @service.save
        flash[:success] = "#{@service.name} added to list of services!"
-       redirect_to service_path(@service)
+       redirect_to @service
     else
        render 'services/new'
     end

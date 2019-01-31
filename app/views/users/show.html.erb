@@ -1,5 +1,11 @@
-<% if current_user.has_any_role?(:client) %>
+<div>
+  <%= link_to "Edit User", edit_user_path, class:"edit-user" %>
+  <%= link_to "Add Schedule", new_schedule_path, class:"edit-user" %>
+  <%= link_to "Delete User", @user, method: :delete, remote: true, class:"delete-user", data: {confirm: "are you sure?"} %>
+</div>
+
 <section>
+  <% if current_user.has_any_role?(:client) %>
   <%= month_calendar events: @appts do |date, appts| %>
     <%= date.day %>
     <% if @appts.present? %>
@@ -13,9 +19,9 @@
   <% end %>
 </section>
 
-<% elsif current_user.has_any_role?(:barber) %>
-<% if @user.appointments.present? %>
 <section>
+  <% elsif current_user.has_any_role?(:barber) %>
+  <% if @user.appointments.present? %>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -40,8 +46,27 @@
   <h1 class="profile-header">No Appointments Scheduled</h1>
   <% end %>
 </section>
-<% end %>
 
-<%= link_to "Edit User", edit_user_path, class:"edit-user" %>
-<%= link_to "Add Schedule", new_schedule_path, class:"edit-user" %>
-<%= link_to "Delete User", @user, method: :delete, remote: true, class:"delete-user", data: {confirm: "are you sure?"} %>
+<!-- barber schedule -->
+<section>
+    <h2>Work Schedule</h2>
+    <table class="table table-striped-barber">
+      <thead>
+        <tr>
+          <th scope="col">Status</th>
+          <th scope="col">Start Time</th>
+          <th scope="col">End Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @user.schedules.each do |u| %>
+        <tr>
+          <td><%= u.status.capitalize %></td>
+          <td><%= u.start_at.strftime("%H:%M") %></td>
+          <td><%= u.end_at.strftime("%H:%M") %></td>
+        <% end %>
+        </tr>
+      </tbody>
+    </table>
+</section>
+<% end %>
