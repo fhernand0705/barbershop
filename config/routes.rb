@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'pages#home'
 
   resources :users
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
   resources :shops
   resources :services
   resources :appointments
+  resources :schedules
   resources :charges, only: [:new, :create]
 
   get '/login', to: 'sessions#new'
