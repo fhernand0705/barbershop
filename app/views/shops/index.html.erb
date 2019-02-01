@@ -1,6 +1,6 @@
 <table class="table table-striped">
-  <% if current_user.has_any_role?(:barber) %>
   <caption class="barbershop-header">Barbershops</caption>
+  <% if current_user.has_any_role?(:barber, :client) %>
   <caption class="add-service">
     <%= link_to new_shop_path do %>
       <i class="fas fa-plus-circle"></i>
