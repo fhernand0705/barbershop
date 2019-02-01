@@ -29,7 +29,7 @@ class AppointmentsController < ApplicationController
 
   def update
     @appt.update(appt_params)
-    redirect_to user_path(@current_user)
+    redirect_to current_user
   end
 
   def index

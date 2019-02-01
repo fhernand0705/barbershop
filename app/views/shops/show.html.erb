@@ -1,7 +1,15 @@
 <div class="main-container">
+  <div>
+    <ul class="shop-info">
+      <li>Name: <%= @shop.name.capitalize %></li>
+      <li>Address: <%= @shop.address %></li>
+      <li>Tele: <%= @shop.phone %></li>
+    </ul>
+  </div>
 
   <section>
-    <button class="openbar" onclick="openSidebar()">Book Appointment</button>
+    <%= link_to "Edit Appt", edit_appointment_path, class:"edit-appt" %>
+    <button class="open-sidebar" onclick="openSidebar()">Book Appointment</button>
     <%= render 'appointments/new' %>
     <%= link_to "Edit Shop", edit_shop_path, class:"edit-shop" %>
     <%= link_to "Delete Shop", @shop, method: :delete, remote: true, class:"delete-shop", data: {confirm: "are you sure?"} %>

@@ -1,9 +1,16 @@
 <div>
-  <%= link_to "Edit User", edit_user_path, class:"edit-user" %>
-<% if current_user.has_any_role?(:barber) %>
-  <%= link_to "Add Schedule", new_schedule_path, class:"edit-user" %>
-<% end %>
-  <%= link_to "Delete User", @user, method: :delete, remote: true, class:"delete-user", data: {confirm: "are you sure?"} %>
+  <ul class="user-info">
+    <li>Profile Name: <%= @user.first_name.capitalize %></li>
+    <li>Email: <%= @user.email %></li>
+  </ul>
+</div>
+
+<div>
+    <%= link_to "Edit User", edit_user_path, class:"edit-user" %>
+  <% if current_user.has_any_role?(:barber) %>
+    <%= link_to "Add Schedule", new_schedule_path, class:"edit-user" %>
+  <% end %>
+    <%= link_to "Delete User", @user, method: :delete, remote: true, class:"delete-user", data: {confirm: "are you sure?"} %>
 </div>
 
 <section>

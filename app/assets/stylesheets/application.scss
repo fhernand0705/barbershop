@@ -114,16 +114,22 @@
    color: #818181;
  }
 
- .openbar {
+ .open-sidebar {
    position: relative;
    top: 6em;
-   left: 55%;
+   left: 50%;
    border-radius: 5px;
    color: #818181;
      &:hover {
        background-color: #06127C;
        color: #818181;
    }
+ }
+
+ .edit-appt-form {
+   margin-top: 8em;
+   display: grid;
+   justify-content: center;
  }
 
  .row {
@@ -147,8 +153,20 @@
    font-size: 2em;
 }
 
+ // Barbershop profile
+ .shop-info {
+   position: relative;
+   top: 5em;
+ }
 
- // Barbershop profile (*calendar)
+ .shop-info li {
+   display: inline-block;
+   list-style-type: none;
+   color: #818181;
+   padding-right: 3.5%;
+   font-size: 2.5em;
+ }
+
  .simple-calendar {
    position: relative;
    float: left;
@@ -162,11 +180,10 @@
    }
  }
 
- // Barbershop profile (*services table)
  .services {
    position: relative;
    float: right;
-   top: 5em;
+   top: 10em;
    width: 25%;
    box-shadow: 0 0 10px 0 rgba(43,43,43,0.1),
    0 13px 6px -7px rgba(43,43,43,0.1);
@@ -174,7 +191,7 @@
 
  .service-header {
    position: relative;
-   top: 4em;
+   top: 2em;
    text-transform: uppercase;
    font-size: 2em;
    font-weight: 700;
@@ -183,7 +200,7 @@
  .add-service {
    position: relative;
    text-transform: uppercase;
-   font-size: 4em;
+   font-size: 2em;
    font-weight: 700;
      a {
        position: relative;
@@ -192,7 +209,6 @@
    }
  }
 
- // Barbershop profile (*barbers table)
  .barbers {
    position: relative;
    float: right;
@@ -222,6 +238,13 @@
    }
  }
 
+ .edit-appt {
+   position: relative;
+   font-size: large;
+   top: 5em;
+   left: 50%;
+ }
+
  .delete-shop {
    position: relative;
    font-size: large;
@@ -237,6 +260,19 @@
  }
 
  // Client/Barber profile
+ .user-info {
+   position: relative;
+   top: 5em;
+ }
+
+ .user-info li {
+   display: inline-block;
+   list-style-type: none;
+   color: #818181;
+   padding-right: 3.5%;
+   font-size: 2.5em;
+ }
+
  .profile-header {
    position: relative;
    color: #818181;
@@ -245,19 +281,21 @@
  }
 
 .appointment-header {
-  font-size: 2em;
-  color: #818181;
+  font-size: 1.5em;
+  color: #06127C;
 }
 
 .schedule-header {
-  font-size: 2em;
-  color: #818181;
+  font-size: 1.5em;
+  color: #06127C;
 }
 
  .table-striped {
    position: relative;
    top: 6em;
    width: 50%;
+   box-shadow: 0 0 5px 0 rgba(43,43,43,0.1),
+   0 13px 6px -7px rgba(43,43,43,0.1);
  }
 
  .table-striped-barber {
@@ -265,6 +303,8 @@
    width: 30%;
    float: right;
    top: 3em;
+   box-shadow: 0 0 5px 0 rgba(43,43,43,0.1),
+   0 13px 6px -7px rgba(43,43,43,0.1);
  }
 
  .edit-user {
